@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My page</title>
+    <link rel="stylesheet" href="page1pr1.css" />
+    <script src="toupbutton.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="https://static.shuffle.dev/components/preview/f47e4207-4c02-4c08-a829-05700d61a77b/assets/public/saturn-assets/images/instagram-photos/photos-insta-color4.png"
+            alt="Logo"
+            title="Это котик"
+          />
+        </div>
+        <div>
+          <p>
+            <b>Мазур Анна Игоревна</b><br />
+            <b>Группа ЭФБО-02-23</b>
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a class="btn btn-one" href="practice1.html">
+          <span>Главная</span>
+        </a>
+        <a class="btn btn-one" href="firstsem.html">
+          <span>Первый семестр</span>
+        </a>
+        <a class="btn btn-one" href="secondsem.html">
+          <span>Второй семестр</span>
+        </a>
+        <a class="btn btn-one" href="page2pr1.html">
+          <span>Услуги</span>
+        </a>
+        <a class="btn btn-one" href="">
+          <span>Авторизация</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <sidebar>
+          <a href="#linkForma">Оставить заявку</a>
+        </sidebar>
+
+        <div class="main" id="linkForma">
+          <div class="grid-container">
+            <a class="link-block">
+              <img src="p1.jpg" alt="картиночка" />
+              <h3>Сайт-визитка</h3>
+            </a>
+            <a class="link-block">
+              <img src="p2.jpg" alt="картиночка" />
+              <h3>Корпоративный сайт</h3>
+            </a>
+            <a class="link-block">
+              <img src="p3.jpg" alt="картиночка" />
+              <h3>Интернет-магазин</h3>
+            </a>
+          </div>
+
+          <div id="modal" class="modal">
+            <div class="modal-content" id="modal-content">
+              <span class="close">&times;</span>
+              <h2 id="heading">Оставьте свои данные</h2> 
+              <p id="intro-text">
+                Заполните форму и мы обязательно свяжемся с вами в ближайшее
+                время для уточнения деталей
+            </p>
+            <div id="successMessage" style="display: none">
+                <p>Спасибо! Ваша форма успешно отправлена!</p>
+            </div>
+              <form id="contactForm" name="forma">
+                <label for="fullName">ФИО: </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Иванов Иван Иванович"
+                  required
+                />
+                <br />
+
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@mail.com"
+                  required
+                />
+                <br />
+
+                <label for="phone">Номер телефона:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+7 (999) 999-99-99"
+                  required
+                />
+                <br />
+
+                <label for="country">Страна:</label>
+                <select id="country" name="country" required>
+                  <option value="" disabled selected>Выберите страну</option>
+                  <option value="ru">Россия</option>
+                  <option value="ru">Англия</option>
+                  <option value="ru">Китай</option>
+                  <option value="ru">Япония</option>
+                  <option value="us">США</option>
+                  <option value="de">Германия</option>
+                  <option value="fr">Франция</option>
+                </select>
+                <br />
+
+                <label for="date">Дата:</label>
+                <input type="date" id="date" name="date" required /> <br />
+
+                <label for="comment">Комментарий:</label>
+                <textarea id="comment" name="comment" rows="4"></textarea>
+                <br />
+                <input
+                  type="checkbox"
+                  id="agreement"
+                  name="agreement"
+                  required
+                />
+                <p>Я согласен с обработкой моих персональных данных</p>
+                <button type="submit">Отправить заявку</button>
+              </form>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              В небольшом городе жила молодая и амбициозная веб-разработчица по
+              имени Аня. С детства она увлекалась технологиями и мечтала
+              создавать сайты, которые могли бы изменить жизнь людей. После
+              окончания школы Аня поступила в университет на факультет
+              информационных технологий, где изучала программирование и
+              веб-дизайн. <br />
+              Во время учебы она начала работать над своими первыми проектами.
+              Аня создала сайт для местного благотворительного фонда, который
+              помогал бездомным. Благодаря ее работе фонд смог привлечь больше
+              пожертвований и волонтеров. Это вдохновило Аню продолжать
+              развиваться в своей профессии. <br />
+              После университета Аня устроилась на работу в небольшую
+              IT-компанию. Она быстро зарекомендовала себя как талантливый
+              разработчик, создавая удобные и красивые интерфейсы для клиентов.
+              Но Аня всегда мечтала о собственном проекте. Однажды, увидев, как
+              трудно людям находить подходящие курсы для обучения, она решила
+              создать платформу, которая объединяла бы образовательные ресурсы.
+              <br />
+              Аня работала над проектом по вечерам и выходным. Она изучала
+              рынок, общалась с потенциальными пользователями и собирала отзывы.
+              Через год упорного труда платформа была готова к запуску. Аня
+              запустила сайт и начала продвигать его через социальные сети и
+              блоги. <br />
+            </p>
+          </div>
+          <div>
+            <p>
+              Постепенно платформа начала набирать популярность. Люди ценили
+              удобство и функциональность, а Аня получала положительные отзывы и
+              предложения о сотрудничестве. Вскоре к ней присоединились другие
+              разработчики, дизайнеры и маркетологи, и команда начала активно
+              развивать проект. <br />
+              Через несколько лет платформа стала одной из самых популярных в
+              стране. Аня не только достигла успеха в своей карьере, но и
+              вдохновила многих молодых людей следовать своим мечтам. Она часто
+              проводила мастер-классы и делилась опытом с новичками в индустрии,
+              показывая, что с настойчивостью и страстью можно добиться всего.
+              <br />
+              История Ани стала примером для многих: следуя своей мечте и
+              работая над собой, можно создать что-то действительно значимое.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+      <p>© Мазур Анна Игоревна, 2024</p>
+      <!-- <div>
+      <img src="wa.png" alt="WhatsApp" width="60" height="45" />
+      <img src="tg.png" alt="Telegram" width="40" height="40" />
+   </div> -->
+    </footer>
+       <script>
+    
+</script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

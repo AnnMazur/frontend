@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      h1 {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      h1:hover {
+        transform: scale(1.1);
+      }
+      p {
+        transition: background-color 0.5s ease;
+      }
+      button {
+        margin-left: 5%;
+      }
+      p.clicked {
+        background-color: lightblue;
+      }
+      .lectures-table {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        text-align: left;
+      }
+
+      .lectures-table.show {
+        display: block;
+        opacity: 1;
+      }
+
+      .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      footer {
+        background-color: rgb(160, 94, 40);
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      .btn {
+        background-color: rgb(43, 114, 142);
+        color: aliceblue;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background-color: aliceblue;
+        color: rgb(43, 114, 142);
+        text-decoration: none;
+      }
+      .btn-link {
+        text-decoration: none;
+        border: none;
+        color: rgb(35, 19, 5);
+      }
+      .scroll-to-top-btn {
+        position: fixed;
+        text-align: center;
+        width: 8%;
+        bottom: 5%;
+        right: 5%;
+        background-color: rgb(43, 114, 142);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.3s ease;
+      }
+
+      .scroll-to-top-btn.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .form-message {
+      display: none;
+      font-size: 18px;
+      color: rgb(87, 32, 72);
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      transition: color 1s ease; 
+    }
+
+    .form-message.show {
+      display: block;
+      color: #2f8c5b; 
+    }
+
+    .form-message.error {
+      color: #430501; 
+    }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light sticky-top"
+      style="background-color: rgb(43, 114, 142); color: aliceblue"
+    >
+      <img
+        class="navbar-brand"
+        src="https://i.pinimg.com/736x/8f/d6/f0/8fd6f0979a12c19d0dd54c10a82eacaa.jpg"
+        alt="Logo"
+        title="Это котик"
+        height="80"
+        width="80"
+      />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="practice1.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="firstsem.html">Первый семестр</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="secondsem.html">Второй семестр</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Услуги
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Сайт-визитка</a>
+              <a class="dropdown-item" href="#">Корпоративный сайт</a>
+              <a class="dropdown-item" href="#">Интернет-магазин</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="page2pr1.html">Все услуги</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Авторизация</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <h1>Выбери, какой ты Ясик сегодня!</h1>
+      <p id="paragraph">Ясик самый лучший кот!</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Ясик(14).jpg" class="card-img-top" alt="Ясик сонный" />
+            <div class="card-body">
+              <h5 class="card-title">Ясик сонный</h5>
+              <p class="card-text">
+                Сегодня ты не выспался и хочешь остаться дома в теплой кроватке
+                и ничего не делать
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="Ясик(5).jpg"
+              class="card-img-top"
+              alt="Ясик застенчивый"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ясик застенчивый</h5>
+              <p class="card-text">
+                Сегодня ты немножко стеснительный, немножко романтичный,
+                немножко загадочный
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Ясик(8).jpg" class="card-img-top" alt="Ясик солнечный" />
+            <div class="card-body">
+              <h5 class="card-title">Ясик солнечный</h5>
+              <p class="card-text">
+                Сегодня ты ловишь лучики солнца и тепла и улыбаешься
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Ясик(2).jpg" class="card-img-top" alt="Ясик серьезный" />
+            <div class="card-body">
+              <h5 class="card-title">Ясик серьезный</h5>
+              <p class="card-text">Сегодня тебе явно не до смеха...</p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Ясик(6).jpg" class="card-img-top" alt="Ясик в шоке" />
+            <div class="card-body">
+              <h5 class="card-title">Ясик в шоке</h5>
+              <p class="card-text">
+                Сегодня ты вообще не понимаешь, что происходит
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="Ясик(16).jpg"
+              class="card-img-top"
+              alt="Ясик любвеобильный"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ясик любвеобильный</h5>
+              <p class="card-text">
+                Сегодня тебе хочется только объятий и любви
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="Ясик(17).jpg"
+              class="card-img-top"
+              alt="Ясик работающий"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ясик работающий</h5>
+              <p class="card-text">Сегодня тебе надо поработать</p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="Ясик кайфующийjpg.jpg"
+              class="card-img-top"
+              alt="Ясик кайфующий"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ясик кайфующий</h5>
+              <p class="card-text">
+                Сегодня ты расслабляешься и ни о чем не думаешь
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="Ясик помылся.jpg"
+              class="card-img-top"
+              alt="Ясик чистенький"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ясик чистенький</h5>
+              <p class="card-text">
+                Сегодня ты краасивый, помытый и вкуснопахнущий
+              </p>
+              <a href="#form" class="btn btn-primary">Это я!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide mt-4"
+      data-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleIndicators"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Карусель 1.jpg" class="d-block w-100" alt="Слайд 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="Карусель 2.jpg" class="d-block w-100" alt="Слайд 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="Карусель 3.jpg" class="d-block w-100" alt="Слайд 3" />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Предыдущий</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Следующий</span>
+      </a>
+    </div>
+
+    <div class="container mt-4">
+      <div id="accordion">
+        <!-- Первая карточка -->
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button
+                id="form"
+                class="btn-link"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Расскажи о себе
+              </button>
+            </h5>
+          </div>
+
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="container mt-2 form-container">
+                <h2>Давай знакомиться!</h2>
+                <form id="form">
+                <div class="form-group">
+                  <label for="fullName">ФИО: </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Иванов Иван Иванович"
+                    required
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@mail.com"
+                    required
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Номер телефона:</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7 (999) 999-99-99"
+                    required
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="country">Страна:</label>
+                  <select
+                    id="country"
+                    name="country"
+                    required
+                    class="form-control"
+                  >
+                    <option value="" disabled selected>Выберите страну</option>
+                    <option value="ru">Россия</option>
+                    <option value="uk">Англия</option>
+                    <option value="cn">Китай</option>
+                    <option value="jp">Япония</option>
+                    <option value="us">США</option>
+                    <option value="de">Германия</option>
+                    <option value="fr">Франция</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="date">Дата:</label>
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="comment">Комментарий:</label>
+                  <textarea
+                    id="comment"
+                    name="comment"
+                    rows="4"
+                    class="form-control"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+                <p id="formMessage" class="form-message">Форма отправлена!</p>
+              </div>
+            </form>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Вторая карточка -->
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button
+                class="btn-link"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Где я учусь
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2250.0957400575658!2d37.476138339098455!3d55.669935273658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54dc1d23b51c3%3A0x74763ed59c81ccb6!2z0KDQotCjINCc0JjQoNCt0JA!5e0!3m2!1sru!2sru!4v1727254023916!5m2!1sru!2sru"
+                width="1000"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Третья карточка-->
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button
+                class="btn-link"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Немного об учебе
+              </button>
+            </h5>
+          </div>
+
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <h3>Учебная программа 4 семестр</h3>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Дисциплина</th>
+                    <th>Выбрать</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Базы данных для индустриальных задач</td>
+                    <td><input type="checkbox" id="db-industrial" /></td>
+                  </tr>
+                  <tr>
+                    <td>Иностранный язык</td>
+                    <td><input type="checkbox" id="foreign-language" /></td>
+                  </tr>
+                  <tr>
+                    <td>Программирование корпоративных систем</td>
+                    <td><input type="checkbox" id="corporate-systems" /></td>
+                  </tr>
+                  <tr>
+                    <td>Системы искусственного интеллекта и большие данные</td>
+                    <td><input type="checkbox" id="ai-big-data" /></td>
+                  </tr>
+                  <tr>
+                    <td>Создание программного обеспечения</td>
+                    <td><input type="checkbox" id="software-development" /></td>
+                  </tr>
+                  <tr>
+                    <td>Теория вероятностей и математическая статистика</td>
+                    <td><input type="checkbox" id="probability-theory" /></td>
+                  </tr>
+                  <tr>
+                    <td>Технологии разработки серверных приложений</td>
+                    <td><input type="checkbox" id="server-apps" /></td>
+                  </tr>
+                  <tr>
+                    <td>Физическая культура и спорт (элективная дисциплина)</td>
+                    <td><input type="checkbox" id="physical-culture" /></td>
+                  </tr>
+                  <tr>
+                    <td>Фронтенд и бэкенд разработка</td>
+                    <td><input type="checkbox" id="frontend-backend" /></td>
+                  </tr>
+                  <tr>
+                    <td>Экономическая культура</td>
+                    <td><input type="checkbox" id="economic-culture" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Четвертая карточка -->
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button
+                class="btn-link"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                14 практика
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseFour"
+            class="collapse"
+            aria-labelledby="headingFour"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <button
+                id="showLectures"
+                type="button"
+                class="btn btn-light"
+                style="margin: 4%"
+              >
+                Показать лекции
+              </button>
+              <table id="lectures" class="table lectures-table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Номер</th>
+                    <th>Тема</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <th>1</th>
+                  <th>Основы языка HTML</th>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>Углубленное изучение HTML</th>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <th>Основы работы с CSS</th>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <th>Адаптивная верстка. Flexbox и Grid Layout</th>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <th>Bootstrap - работа с фреймворком</th>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <th>Основы языка JavaScript</th>
+                </tr>
+                <tr>
+                  <th>7</th>
+                  <th>Работа с DOM и событиями JavaScript</th>
+                </tr>
+                <tr>
+                  <th>8</th>
+                  <th>Введение в GitHub и GitHub Pages</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+
+      <p>© Мазур Анна Игоревна, 2024</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="toupbutton.js"></script>
+
+    <script>
+      document
+        .getElementById("paragraph")
+        .addEventListener("click", function () {
+          this.classList.toggle("clicked");
+        });
+      document
+        .getElementById("showLectures")
+        .addEventListener("click", function () {
+          document.getElementById("lectures").classList.toggle("show");
+        });
+
+    </script>
+  </body>
+</html>
