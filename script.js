@@ -1,5 +1,5 @@
 const modal = document.getElementById("modal");
-const linkBlocks = document.querySelectorAll(".link-block"); // Получаем все элементы с классом Link-block
+const linkBlocks = document.querySelectorAll(".link-block"); 
 const span = document.getElementsByClassName("close")[0];
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
@@ -33,7 +33,7 @@ const formData = {
     console.log("Имя: " + this.fullName);
     console.log("E-mail: " + this.email);
     console.log("Телефон: " + this.phone);
-    console.log("Страна: " + this.phone);
+    console.log("Страна: " + this.country);
     console.log("Дата: " + this.date);
     console.log("Комментарий: " + this.comment);
   },

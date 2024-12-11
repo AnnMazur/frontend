@@ -383,6 +383,13 @@ embed {
     align-items:center;
 
   }
+  .main {
+    margin-left: 0;
+    margin: 5%;
+  }
+  .grid-container {
+    margin-right: 5%;
+  }
   .video-container {
     position: relative;
     width: 100%;         /* Видео займет 100% ширины контейнера */
